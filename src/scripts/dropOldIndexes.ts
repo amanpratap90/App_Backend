@@ -10,6 +10,10 @@ const dropOldIndexes = async () => {
 
         const db = mongoose.connection.db;
 
+        if (!db) {
+            throw new Error('Database connection not established');
+        }
+
         // Drop old 'id' index from users collection
         try {
             await db.collection('users').dropIndex('id_1');
