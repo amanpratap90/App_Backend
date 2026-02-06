@@ -5,6 +5,7 @@ import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import habitRoutes from './routes/habitRoutes';
 import noteRoutes from './routes/noteRoutes';
+import rewardRoutes from './routes/rewardRoutes';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/habits', habitRoutes);
 app.use('/api/notes', noteRoutes);
+app.use('/api/rewards', rewardRoutes);
 
 app.get('/', (req, res) => {
     res.send('HabitFlow Backend is running');
